@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row col-md-6 col-md-offset-2 ">
+  <table class="table table-hover table-responsive ">
+      <thead>
+          <tr>
+              <th></th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>UserDetail</th>                   
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users">
+              <td> <input type="checkbox" [checked] = "user.isDone" (click) ="updateuser(user)" ></td>
+              <td>{{user.id}}</td>
+              <td >{{user.name}}</td>
+              <td >{{user.username}}</td>
+              <td >{{user.email}}</td>
+              
+              <td><button [routerLink]="['/userdetails', user.id]" class="delete btn btn-secondary btn-sm"(click)="onSelect(user)">View Todo</button></td>
+              <td><button [routerLink]="['/userlist', user.id]" type="button" data-toggle="modal" data-tooltip class="delete btn btn-danger btn-sm"(click)="deleteTask(user.id)"><span class="glyphicon glyphicon-trash"></span></button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>

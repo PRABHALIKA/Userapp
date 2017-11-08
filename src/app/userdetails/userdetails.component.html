@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+   
+  	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">UserDetails</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class=" col-md-12 col-lg-12 "> 
+            <table class="table table-user-information">
+              <tbody>
+                <tr>
+                  <td>Name:</td>
+                  <td>{{userdetail.name}}</td>
+                </tr>	
+                <tr>
+                  <td>User Id:</td>
+                  <td>{{userdetail.id}}</td>
+                </tr>
+                <tr>
+                  <td>User Name:</td>
+                  <td>{{userdetail.username}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{{userdetail.email}}</td>
+                </tr>
+             
+                <tr>
+                <td>Phone Number</td>
+                <td>{{userdetail.phone}}</td>
+                </tr>
+
+                <tr>
+                  <td>Address</td>
+                  <td>Street : {{userdetail.address.street}},<br/>
+                      City: {{userdetail.address.city}},<br/>
+                      Zipcode: {{userdetail.address.zipcode}},<br/>
+                      Geo: Lat => {{userdetail.address.geo.lat}},
+                           Lng => {{userdetail.address.geo.lng}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Website</td>
+                  <td>{{userdetail.website}}</td>
+                </tr>
+                <tr>
+                  <td>Company</td>
+                  <td>{{userdetail.company.name}},<br/>
+                      {{userdetail.company.catchPhrase}},<br/>
+                      {{userdetail.company.bs}}
+                  </td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class = "pull-left">
+          <a routerLink="/userlist" class="btn btn-primary">Back to List</a>
+        </div>
+        <div class ="pull-right"> <a class="btn btn-primary" (click)="newuser()">Create Todo</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+  <form class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" (submit)="addUser($event)">
+        <div class="form-group" *ngIf="addnewuser">
+          <input type="text" [(ngModel)]="username" name="title" class="form-control" placeholder="New User...">    
+        </div>  
+  </form>
+
+
+
+
